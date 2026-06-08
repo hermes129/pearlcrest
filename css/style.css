@@ -1682,48 +1682,28 @@ textarea.input {
   visibility: hidden;
 }
 
-/* ——— MOBILE ——— */
-@media (max-width: 479px) {
+/* ——— TABLET (991px) ——— */
+@media (max-width: 991px) {
   :root {
-    --page-padding: 1.25rem;
-    --section-padding: 5rem;
-    --header-height: 4rem;
+    --page-padding: 2rem;
+    --section-padding: 6rem;
+    --header-height: 5rem;
   }
 
+  /* Typography */
   .h1 {
-    font-size: 4.5rem;
+    font-size: 6.5rem;
   }
 
   .h2 {
-    font-size: 4rem;
-    top: 0;
-  }
-
-  .h3 {
-    font-size: 3rem;
+    font-size: 8rem;
   }
 
   .h4 {
-    font-size: 3rem;
+    font-size: 5rem;
   }
 
-  .h5,
-  .h5-glare {
-    font-size: 2.5rem;
-  }
-
-  .h6 {
-    font-size: 1.25rem;
-  }
-
-  .b0 {
-    font-size: 1.5rem;
-  }
-
-  .b1 {
-    font-size: 1rem;
-  }
-
+  /* Nav / Header */
   .nav-menu {
     position: fixed;
     inset: 0;
@@ -1757,10 +1737,6 @@ textarea.input {
     gap: 3rem;
   }
 
-  .nav-link {
-    font-size: 1.5rem;
-  }
-
   .nav-btn {
     width: 100%;
     margin-top: 4rem;
@@ -1771,27 +1747,33 @@ textarea.input {
     z-index: 10;
   }
 
+  /* Hero */
   .hero-heading {
     flex-direction: column;
-    padding: 0;
+    align-items: flex-start;
+    padding-left: 0;
+    padding-right: 0;
     gap: 2rem;
   }
 
   .hero-right {
     max-width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
   }
 
-  .hero-title .char-wrap {
-    margin-right: -0.5rem;
+  .hero-right-heading {
+    gap: 1.5rem;
+    max-width: 80%;
   }
 
-  .hero-title .char-wrap:nth-child(n) {
-    left: 0;
-  }
-
+  /* About */
   .about-info {
     flex-direction: column;
-    gap: 3rem;
+    gap: 4rem;
   }
 
   .about-left {
@@ -1805,7 +1787,7 @@ textarea.input {
 
   .about-img {
     max-width: 100%;
-    height: 30rem;
+    height: 40rem;
   }
 
   .about-text-box {
@@ -1813,33 +1795,35 @@ textarea.input {
     margin-right: 0;
   }
 
+  /* Stats */
   .stats-row-1 {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 4rem;
   }
 
   .stats-row-2 {
     grid-template-columns: 1fr;
+    gap: 4rem;
   }
 
   .stats-row-3 {
     padding-left: 0;
   }
 
+  /* Projects */
+  .project-texts {
+    min-height: 12rem;
+  }
+
+  /* Beliefs */
   .beliefs-wrap {
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    grid-template-columns: 1fr;
+    gap: 3rem;
     padding-right: 0;
   }
 
   .beliefs-card {
-    width: 100%;
-    height: 22rem;
-  }
-
-  .our-beliefs {
-    height: auto;
-    padding-bottom: var(--section-padding);
+    height: 18rem;
   }
 
   .our-beliefs-heading {
@@ -1848,34 +1832,26 @@ textarea.input {
   }
 
   .our-beliefs-img {
+    height: 40rem;
     width: 100%;
-    height: 30rem;
-    position: relative;
   }
 
   .our-beliefs-text-box {
-    margin-top: 3rem;
-    margin-right: 0;
     max-width: 100%;
+    margin-top: 4rem;
+    align-self: flex-start;
   }
 
+  /* Amenities */
   .amenities-wrap {
     flex-direction: column;
-    gap: 3rem;
+    gap: 4rem;
     height: auto;
-    position: relative;
   }
 
   .amenities-images-container {
     width: 100%;
-    height: 48vh;
-  }
-
-  .amenities-images-small {
-    right: -2rem;
-    bottom: -4.5rem;
-    width: 12rem;
-    height: 16rem;
+    height: 50vh;
   }
 
   .amenities-texts-container {
@@ -1883,8 +1859,10 @@ textarea.input {
     margin-top: 0;
   }
 
+  /* FAQ */
   .faq-heading {
     grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
   .faq-dropdown {
@@ -1905,6 +1883,7 @@ textarea.input {
     animation: fadeInCss 0.3s ease both;
   }
 
+  /* CTA */
   .cta-wrap {
     flex-direction: column;
     gap: 3rem;
@@ -1916,16 +1895,140 @@ textarea.input {
 
   .form-block {
     max-width: 100%;
+    padding: 4rem 3rem;
+  }
+
+  /* Footer */
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+
+  .footer-right {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Modals */
+  .modal-content {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    overflow-y: auto;
+  }
+
+  .modal-sidebar {
+    grid-row: 1;
+    border-left: none;
+    border-bottom: 1px solid var(--white-a-10);
+    height: auto;
+    overflow-y: visible;
+  }
+
+  .modal-slider-wrap {
+    grid-row: 2;
+    min-height: 40rem;
+    height: auto;
+  }
+
+  .modal-slide-info-wrap {
+    padding-left: var(--page-padding);
+  }
+
+  .projects-pagination {
+    top: auto;
+    bottom: 2rem;
+    right: 2rem;
+  }
+}
+
+/* ——— MOBILE (479px) ——— */
+@media (max-width: 479px) {
+  :root {
+    --page-padding: 1.25rem;
+    --section-padding: 5rem;
+    --header-height: 4rem;
+  }
+
+  .h1 {
+    font-size: 3.5rem;
+  }
+
+  .h2 {
+    font-size: 4rem;
+    top: 0;
+  }
+
+  .h3 {
+    font-size: 3rem;
+  }
+
+  .h4 {
+    font-size: 3rem;
+  }
+
+  .h5,
+  .h5-glare {
+    font-size: 2.5rem;
+  }
+
+  .h6 {
+    font-size: 1.25rem;
+  }
+
+  .b0 {
+    font-size: 1.5rem;
+  }
+
+  .b1 {
+    font-size: 1rem;
+  }
+
+  .nav-link {
+    font-size: 1.5rem;
+  }
+
+  .hero-right {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-right-heading {
+    max-width: 100%;
+  }
+
+  .hero-title .char-wrap {
+    margin-right: -0.5rem;
+  }
+
+  .about-img {
+    height: 30rem;
+  }
+
+  .stats-row-1,
+  .stats-row-2 {
+    gap: 3rem;
+  }
+
+  .beliefs-card {
+    height: 22rem;
+  }
+
+  .our-beliefs-img {
+    height: 30rem;
+  }
+
+  .amenities-images-small {
+    right: -1rem;
+    bottom: -3rem;
+    width: 10rem;
+    height: 13rem;
+  }
+
+  .form-block {
     padding: 3rem 1.5rem;
   }
 
   .form-grid {
     grid-template-columns: 1fr;
-  }
-
-  .footer-top {
-    grid-template-columns: 1fr;
-    gap: 3rem;
   }
 
   .footer-right {
@@ -1942,19 +2045,11 @@ textarea.input {
     text-align: left;
   }
 
-  .modal-content {
-    grid-template-columns: 1fr;
-  }
-
   .modal-slider-wrap {
     min-height: 25rem;
   }
 
-  .modal-slide-info-wrap {
-    grid-column: 1;
-  }
-
-  .projects-pagination {
-    top: -0.9rem;
+  .our-beliefs-heading {
+    align-items: start;
   }
 }
