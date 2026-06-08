@@ -198,30 +198,30 @@ function generateMaskGradient(progressArray) {
 // ============================================
 const projectsData = {
   0: {
-    title: 'Lumière Duplex Residences',
-    description: 'Two-story luxury apartments that features sunlit living spaces, private terraces, and a selection of exclusive amenities. Each residence is a masterclass in spatial design, where natural light and premium materials create an atmosphere of understated sophistication.',
+    title: 'Off-Plan Properties',
+    description: 'Invest before completion and secure Dubai\'s most competitive entry prices. We source launches from EMAAR, Sobha, Nakheel, Damac, and other top developers — giving you first access before public release.',
     slides: [
-      { main: 'assets/images/project-1.png', thumb: 'assets/images/project-1.png', label: 'LIVING ROOM', area: 450, areaText: 'total living area' },
-      { main: 'assets/images/about-img.png', thumb: 'assets/images/about-img.png', label: 'BEDROOM', area: 280, areaText: 'bedroom suite area' },
-      { main: 'assets/images/amenity-big-2.png', thumb: 'assets/images/amenity-big-2.png', label: 'TERRACE', area: 120, areaText: 'private terrace' },
+      { main: 'assets/images/project-1.png', thumb: 'assets/images/project-1.png', label: 'SOBHA HARTLAND II', area: 1800, areaText: 'starting from AED (k)' },
+      { main: 'assets/images/about-img.png', thumb: 'assets/images/about-img.png', label: 'MBR CITY', area: 2200, areaText: 'starting from AED (k)' },
+      { main: 'assets/images/amenity-big-2.png', thumb: 'assets/images/amenity-big-2.png', label: 'DUBAI HILLS', area: 1500, areaText: 'starting from AED (k)' },
     ],
   },
   1: {
-    title: 'Crown Jewel Penthouse',
-    description: 'With panoramic views, curated interiors, and spaces shaped for comfort and sophistication, the penthouse becomes more than a home — it\'s a statement. Floor-to-ceiling windows frame the cityscape like living art.',
+    title: 'Developed Properties',
+    description: 'Ready to move in. These fully completed properties across Dubai\'s prime districts are available for immediate occupancy or rental. Villas, apartments, and townhouses — all verified and handpicked.',
     slides: [
-      { main: 'assets/images/project-2.png', thumb: 'assets/images/project-2.png', label: 'GREAT ROOM', area: 680, areaText: 'total living area' },
-      { main: 'assets/images/amenity-big-3.png', thumb: 'assets/images/amenity-big-3.png', label: 'SKY TERRACE', area: 350, areaText: 'outdoor terrace' },
-      { main: 'assets/images/beliefs-hero.png', thumb: 'assets/images/beliefs-hero.png', label: 'MASTER SUITE', area: 420, areaText: 'master bedroom area' },
+      { main: 'assets/images/project-2.png', thumb: 'assets/images/project-2.png', label: 'DUBAI MARINA', area: 3200, areaText: 'price AED (k)' },
+      { main: 'assets/images/amenity-big-3.png', thumb: 'assets/images/amenity-big-3.png', label: 'PALM JUMEIRAH', area: 5800, areaText: 'price AED (k)' },
+      { main: 'assets/images/beliefs-hero.png', thumb: 'assets/images/beliefs-hero.png', label: 'DOWNTOWN', area: 4100, areaText: 'price AED (k)' },
     ],
   },
   2: {
-    title: 'Aurelia Garden Suites',
-    description: 'Ground-level sanctuaries offering serene private gardens and a seamless blend of indoor comfort and outdoor tranquility. Each suite opens onto a private courtyard, creating a personal oasis in the heart of the city.',
+    title: 'Pre-Owned Properties',
+    description: 'Secondary market properties with proven history and room for negotiation. Our team handles due diligence, title deed verification, and every step of the transfer process on your behalf.',
     slides: [
-      { main: 'assets/images/project-3.png', thumb: 'assets/images/project-3.png', label: 'GARDEN VIEW', area: 520, areaText: 'total suite area' },
-      { main: 'assets/images/amenity-big-1.png', thumb: 'assets/images/amenity-big-1.png', label: 'COURTYARD', area: 280, areaText: 'private garden' },
-      { main: 'assets/images/amenity-small-3.png', thumb: 'assets/images/amenity-small-3.png', label: 'WELLNESS', area: 175, areaText: 'spa area' },
+      { main: 'assets/images/project-3.png', thumb: 'assets/images/project-3.png', label: 'ARABIAN RANCHES', area: 5500, areaText: 'price AED (k)' },
+      { main: 'assets/images/amenity-big-1.png', thumb: 'assets/images/amenity-big-1.png', label: 'EMIRATES HILLS', area: 12000, areaText: 'price AED (k)' },
+      { main: 'assets/images/amenity-small-3.png', thumb: 'assets/images/amenity-small-3.png', label: 'JBR', area: 2800, areaText: 'price AED (k)' },
     ],
   },
 };
@@ -342,6 +342,21 @@ function initScrollAnimations() {
     gsap.set(split.lines, { yPercent: 110 });
 
     gsap.to(split.lines, {
+      yPercent: 0,
+      duration: 1.2,
+      stagger: 0.1,
+      ease: 'power3.out',
+      scrollTrigger: { trigger: el, start: 'top 80%', once: true },
+    });
+  });
+
+  // Manual split line reveals
+  gsap.utils.toArray('[data-anim="manual-lines"]').forEach(el => {
+    const lines = el.querySelectorAll('.line');
+    gsap.set(el, { visibility: 'visible' });
+    gsap.set(lines, { yPercent: 110 });
+
+    gsap.to(lines, {
       yPercent: 0,
       duration: 1.2,
       stagger: 0.1,
